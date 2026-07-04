@@ -1,0 +1,21 @@
+# -- 메인 메뉴 --
+[[main]]
+  name = "포트폴리오"
+  pageRef = "portfolio"
+  weight = 10
+
+[[main]]
+  name = "일기"
+  pageRef = "diary"
+  weight = 20
+
+[[main]]
+  name = "이력서"
+  pageRef = "resume"
+  weight = 30
+
+# -- 푸터 메뉴 --
+[[footer]]
+  name = "태그"
+  pageRef = "tags"
+  weight = 10

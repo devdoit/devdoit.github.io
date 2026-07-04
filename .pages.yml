@@ -1,0 +1,90 @@
+# Pages CMS 설정 (https://pagescms.org)
+# app.pagescms.org 에서 GitHub 로그인 후 이 저장소를 열면
+# 네이버 블로그처럼 폼 기반으로 글 작성/이미지 업로드가 가능합니다.
+
+media:
+  input: static/images
+  output: /images
+
+content:
+  - name: diary
+    label: 일기
+    type: collection
+    path: content/diary
+    filename: "{year}-{month}-{day}-{fields.title}.md"
+    exclude: ["_index.md"]
+    view:
+      fields: [title, date, tags]
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: 제목
+        type: string
+        required: true
+      - name: date
+        label: 날짜
+        type: date
+        required: true
+      - name: summary
+        label: 요약
+        type: string
+      - name: tags
+        label: 태그
+        type: string
+        list: true
+      - name: draft
+        label: 임시저장 (체크하면 공개 안 됨)
+        type: boolean
+        default: false
+      - name: body
+        label: 본문
+        type: rich-text
+
+  - name: portfolio
+    label: 포트폴리오
+    type: collection
+    path: content/portfolio
+    exclude: ["_index.md"]
+    view:
+      fields: [title, date, tags]
+    fields:
+      - name: title
+        label: 제목
+        type: string
+        required: true
+      - name: date
+        label: 날짜
+        type: date
+        required: true
+      - name: summary
+        label: 요약
+        type: string
+      - name: tags
+        label: 태그
+        type: string
+        list: true
+      - name: featureimage
+        label: 대표 이미지
+        type: image
+      - name: draft
+        label: 임시저장
+        type: boolean
+        default: false
+      - name: body
+        label: 본문
+        type: rich-text
+
+  - name: resume
+    label: 이력서
+    type: file
+    path: content/resume/index.md
+    fields:
+      - name: title
+        label: 제목
+        type: string
+      - name: body
+        label: 본문
+        type: rich-text

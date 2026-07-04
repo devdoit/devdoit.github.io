@@ -1,0 +1,19 @@
+locale = "ko"
+label = "한국어"
+weight = 1
+title = "DevDoit"
+
+[params]
+  displayName = "한국어"
+  isoCode = "ko"
+  rtl = false
+  dateFormat = "2006년 1월 2일"
+  description = "개발 포트폴리오와 일상을 기록하는 공간입니다."
+
+[params.author]
+  name = "DevDoit"
+  headline = "개발 포트폴리오와 일상을 기록하는 공간입니다."
+  bio = "안녕하세요 👋 개발 포트폴리오와 일상을 기록하는 공간입니다."
+  links = [
+    { github = "https://github.com/devdoit" },
+  ]

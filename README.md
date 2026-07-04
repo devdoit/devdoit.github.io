@@ -1,56 +1,29 @@
-# Chirpy Starter
+# devdoit.github.io
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+Hugo + [Blowfish](https://blowfish.page/) 테마 기반 개인 사이트.
+`main` 브랜치에 push하면 GitHub Actions가 자동으로 빌드·배포합니다.
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
-`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
-from the theme's gem. If you have ever installed this theme gem, you can use the command
-`bundle info --path jekyll-theme-chirpy` to locate these files.
+## 글 쓰는 방법 (CMS — 권장)
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
-able to enjoy the out-of-the-box experience when using feature-rich themes.
+1. https://app.pagescms.org 접속 → **GitHub 계정으로 로그인**
+2. `devdoit.github.io` 저장소 선택
+3. 왼쪽 메뉴에서 **일기 / 포트폴리오 / 이력서** 선택 → 폼에서 작성
+4. 이미지는 에디터에서 바로 업로드 (자동으로 `static/images/`에 저장됨)
+5. **저장**을 누르면 자동 커밋 → 1~2분 후 사이트에 반영
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
-Jekyll site. The following is a list of targets:
+## 로컬에서 직접 쓰기
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
+```powershell
+hugo new diary/2026-07-04-제목.md   # 새 글
+hugo server -D                       # 미리보기 (http://localhost:1313)
+git add . ; git commit -m "글 추가" ; git push
 ```
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
-latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+## 구조
 
-## Prerequisites
-
-Follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of
-the basic environment. [Git](https://git-scm.com/) also needs to be installed.
-
-## Installation
-
-Sign in to GitHub and [**use this template**][use-template] to generate a brand new repository and name it
-`USERNAME.github.io`, where `USERNAME` represents your GitHub username.
-
-Then clone it to your local machine and run:
-
-```console
-$ bundle
-```
-
-## Usage
-
-Please see the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy#documentation).
-
-## License
-
-This work is published under [MIT][mit] License.
-
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[use-template]: https://github.com/cotes2020/chirpy-starter/generate
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+- `content/diary/` — 일기
+- `content/portfolio/` — 포트폴리오
+- `content/resume/index.md` — 이력서
+- `static/images/` — 업로드 이미지
+- `config/_default/` — 사이트 설정 (hugo.toml, params.toml, menus.ko.toml 등)
+- `.pages.yml` — Pages CMS 편집 폼 설정
